@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import requests
+import curl_cffi import request
 import re
 import datetime
 import time
@@ -21,7 +22,7 @@ CONFIG = {
 
 class SisakBot:
     def __init__(self):
-        self.session = requests.Session()
+        self.session = requests.Session(impersonate="chrome110")
         self.session.headers.update(self._get_headers())
         self.urls = self._get_urls()
 
